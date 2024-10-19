@@ -1,0 +1,9 @@
+alembic
+cryptography
+fastapi[standard]
+psycopg2
+psycopg2-binary
+pyjwt
+requests
+sqlalchemy[asyncio]
+uvicorn[standard]
