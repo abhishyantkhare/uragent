@@ -9,7 +9,7 @@ class SeedORM(Base):
     __tablename__ = "seeds"
 
     id: uuid.UUID = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
-    type: str = Column(String)
+    seed_type: str = Column(String)
     auth_info: str = Column(JSON)
     created_at: datetime = Column(DateTime, default=datetime.now)
     updated_at: datetime = Column(DateTime, default=datetime.now, onupdate=datetime.now)

@@ -1,9 +1,14 @@
 alembic
+backoff
 cryptography
+chromadb
 fastapi[standard]
+pinecone-client
 psycopg2
 psycopg2-binary
 pyjwt
 requests
 sqlalchemy[asyncio]
+temporalio
+tweepy
 uvicorn[standard]

@@ -45,4 +45,6 @@ def auth_required(
         raise HTTPException(status_code=401, detail="Invalid token.")
     user_id = payload.get("sub")
     user = user_service.get_user_by_clerk_id(user_id)
+    if user is None:
+        raise HTTPException(status_code=401, detail="User not found.")
     return user

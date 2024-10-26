@@ -10,7 +10,6 @@ class AgentORM(Base):
 
     id: uuid.UUID = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
     name: str = Column(String)
-    purpose: str = Column(String, nullable=True)
     context: str = Column(String, nullable=True)
     created_at: datetime = Column(DateTime, default=datetime.now)
     updated_at: datetime = Column(DateTime, default=datetime.now, onupdate=datetime.now)

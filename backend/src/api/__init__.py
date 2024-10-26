@@ -1,7 +1,7 @@
 # This file can be left empty
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from src.api.routers import agents, users
+from src.api.routers import agents, seeds, twitter, users
 
 app = FastAPI()
 
@@ -21,3 +21,5 @@ app.add_middleware(
 # Include routers
 app.include_router(users.router)
 app.include_router(agents.router)
+app.include_router(twitter.router)
+app.include_router(seeds.router)
