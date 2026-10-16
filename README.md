@@ -13,3 +13,11 @@ collection are in `database/schema.sql`. The browser needs
 Use only a public/publishable key in browser configuration, never a service key.
 The table deliberately permits public reads only. No user accounts or private
 data are needed by this app.
+
+Deploy from the repository root. `vercel.json` selects Vite and the workspace's
+build output. Set both `VITE_` variables on the Vercel project before building.
+An existing Supabase `anon` key also works as the public key.
+
+The initial database migration is in `supabase/migrations`. After pushing it,
+apply it to the managed database with `cofounder-dev database migrations apply`.
+This creates only the reading collection table, its read policy, and sample rows.
