@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A small library of books and essays worth your time." />
+    <title>Reading Room</title>
+  </head>
+  <body>
+    <main>
+      <header><a href="/" class="wordmark">Reading Room<span>Est. 2026</span></a><span class="edition">A PUBLIC NOTEBOOK</span></header>
+      <section class="intro"><p class="eyebrow">A LITTLE LESS SCROLLING</p><h1>Good things<br />take a few pages.</h1><p class="lede">Books and essays to sit with. A small, considered collection for curious minds.</p></section>
+      <section aria-label="Reading collection">
+        <div class="toolbar"><div class="tabs" role="group" aria-label="Category"><button data-category="all" aria-pressed="true">All reading</button><button data-category="book" aria-pressed="false">Books</button><button data-category="essay" aria-pressed="false">Essays</button></div><label>Search<input id="search" type="search" placeholder="Title or author" /></label></div>
+        <p id="connection" role="status">Connecting to the collection…</p>
+        <div id="collection" class="collection"></div>
+      </section>
+      <footer><span>A shelf, not a feed.</span><span>Reading Room / 01</span></footer>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
