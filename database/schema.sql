@@ -7,6 +7,7 @@ create table public.reading_room_books_retry (
 );
 
 alter table public.reading_room_books_retry enable row level security;
+revoke all on public.reading_room_books_retry from anon, authenticated;
 grant select on public.reading_room_books_retry to anon, authenticated;
 create policy "Public reading collection" on public.reading_room_books_retry
   for select to anon, authenticated using (true);
