@@ -2,9 +2,5 @@
   "name": "uragent-reading-room",
   "private": true,
   "workspaces": ["apps/reading-room"],
-  "scripts": {
-    "dev": "npm run dev --workspace @uragent/reading-room",
-    "build": "npm run build --workspace @uragent/reading-room"
-  },
   "engines": { "node": "24.x" }
 }

@@ -58,7 +58,7 @@ async function loadCollection() {
     return;
   }
   const client = createClient(url, key);
-  const { data, error } = await client.from('reading_room_books')
+  const { data, error } = await client.from('reading_room_books_retry')
     .select('id,title,author,category,note').order('id');
   if (error) {
     status.textContent = `The collection could not load: ${error.message}`;
