@@ -5,6 +5,9 @@ const collection = document.querySelector('#collection');
 const status = document.querySelector('#connection');
 const search = document.querySelector('#search');
 const tabs = [...document.querySelectorAll('[data-category]')];
+const insight = document.querySelector('#insight');
+document.querySelector('#collection-name').textContent =
+  import.meta.env.READING_ROOM_PUBLIC_COLLECTION_NAME || 'The evening shelf';
 let books = [];
 let category = 'all';
 
@@ -51,10 +54,10 @@ for (const tab of tabs) {
 }
 
 async function loadCollection() {
-  const url = import.meta.env.VITE_SUPABASE_URL;
-  const key = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY;
+  const url = import.meta.env.READING_ROOM_PUBLIC_DATABASE_ENDPOINT;
+  const key = import.meta.env.READING_ROOM_PUBLIC_DATABASE_BROWSER_KEY;
   if (!url || !key) {
-    status.textContent = 'Setup required: connect this app to Supabase using VITE_SUPABASE_URL and VITE_SUPABASE_PUBLISHABLE_KEY.';
+    status.textContent = 'Setup required: configure the collection database endpoint and browser key.';
     return;
   }
   const client = createClient(url, key);
@@ -70,4 +73,19 @@ async function loadCollection() {
 
 loadCollection().catch(() => {
   status.textContent = 'The collection could not connect. Please try again later.';
+});
+
+document.querySelector('#suggest-reading').addEventListener('click', async () => {
+  insight.textContent = 'Choosing something for your evening...';
+  try {
+    const response = await fetch('/api/reading-insight', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ titles: books.map((book) => `${book.title} by ${book.author}`) }),
+    });
+    const result = await response.json();
+    insight.textContent = response.ok ? result.text : result.error;
+  } catch {
+    insight.textContent = 'The reading guide could not connect. Please try again later.';
+  }
 });

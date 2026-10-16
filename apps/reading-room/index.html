@@ -8,12 +8,14 @@
   </head>
   <body>
     <main>
-      <header><a href="/" class="wordmark">Reading Room<span>Second edition</span></a><span class="edition">A PUBLIC NOTEBOOK</span></header>
+      <header><a href="/" class="wordmark">Reading Room<span>Third edition</span></a><span id="collection-name" class="edition">The evening shelf</span></header>
       <section class="intro"><p class="eyebrow">A LITTLE LESS SCROLLING</p><h1>Good things<br />take a few pages.</h1><p class="lede">Books and essays to sit with. A small, considered collection for curious minds.</p></section>
       <section aria-label="Reading collection">
         <div class="toolbar"><div class="tabs" role="group" aria-label="Category"><button data-category="all" aria-pressed="true">All reading</button><button data-category="book" aria-pressed="false">Books</button><button data-category="essay" aria-pressed="false">Essays</button></div><label>Search<input id="search" type="search" placeholder="Title or author" /></label></div>
         <p id="connection" role="status">Connecting to the collection…</p>
         <div id="collection" class="collection"></div>
+        <button id="suggest-reading" type="button">Help me choose a book</button>
+        <p id="insight" role="status">Ask the reading guide for a short recommendation.</p>
       </section>
       <footer><span>A shelf, not a feed.</span><span>Reading Room / 01</span></footer>
     </main>
