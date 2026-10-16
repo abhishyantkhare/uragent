@@ -3,7 +3,7 @@ export default function Home() {
     <main className="flex min-h-screen flex-col justify-between px-8 py-10 sm:px-16 sm:py-14">
       <header className="text-xl font-semibold tracking-tight">uragent</header>
       <section className="my-20 max-w-2xl">
-        <p className="mb-5 text-sm font-medium text-zinc-500">A fresh start</p>
+        <p className="mb-5 text-sm font-medium text-zinc-500">Merge deploy test: October 16, 2026</p>
         <h1 className="text-5xl font-semibold tracking-tight sm:text-7xl">
           Ready for what&apos;s next.
         </h1>
