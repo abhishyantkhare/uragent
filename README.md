@@ -24,3 +24,15 @@ credential. `READING_ROOM_AI_MODEL` is a non-secret model setting. Neither serve
 variable may be exposed through Vite's public prefix. The book-selection button
 requires a successful provider response; a placeholder recommendation does not
 provide this feature.
+
+## Managed hosting configuration
+
+The Vite build also accepts Cofounder's managed public database variables
+`NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` as fallbacks for
+the two `READING_ROOM_PUBLIC_DATABASE_*` settings. Explicit Reading Room values
+take priority. Only those public values are mapped into the browser; the service
+role key and `READING_ROOM_AI_API_KEY` remain server-only.
+
+Run configuration and provider-contract tests with
+`npm test --workspace @uragent/reading-room`. Provider-contract tests mock network
+responses; the live reading-guide flow still requires its original credential.
